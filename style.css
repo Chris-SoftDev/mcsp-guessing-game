@@ -1,13 +1,24 @@
-.info {
+* {
+    margin: 5% auto;
+}
+
+body {
+    background-color: grey;
+}
+
+.game-window {
     width: 650px;
     border-radius: 30px;
     border: 10px solid seagreen;
     background-color: saddlebrown;
     padding: 5px;
     font-weight: bolder;
-    color: whitesmoke
+    color: whitesmoke;
+    text-align: center;
 }
 
-strong {
-    color: palegreen;
+.btn {
+    background-color: darkseagreen;
+    font-weight: 600;
+    padding: .5em;
 }
