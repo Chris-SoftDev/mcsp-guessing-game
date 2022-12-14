@@ -31,6 +31,10 @@ function playGame(name, obj) {
 
     while (!gameComplete) {
         let userGuess = prompt(`${name}, please enter your number guess in a range of ${obj.min}-${obj.max}:`);
+        let guessArr = range(obj.min, obj.max);
+        while (!guessArr.includes(parseInt(userGuess))) {
+            userGuess = prompt(`Sorry ${name}, but you entered a number outside the range of answers.\n\nPlease enter your number guess in a range of ${obj.min}-${obj.max}:`);
+        }
         if (parseInt(userGuess) === obj.secretNum) {
             obj[name].guesses.push(userGuess); // Added in the event a player guesses on the first try.           
             winMessage(name, obj);
@@ -72,4 +76,12 @@ function winMessage(name, obj) {
 
 function randomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function range(min, max) {
+    let arr = [];
+    for (let i = min; i <= max; i++) {
+        arr.push(i);
+    }
+    return arr;
 }
